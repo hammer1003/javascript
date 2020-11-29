@@ -1,0 +1,14 @@
+query {
+  users {
+    id
+    username
+    email
+    records {
+      id
+      location
+      magnitude
+      when
+      time
+    }
+  }
+}

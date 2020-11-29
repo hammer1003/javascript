@@ -1,0 +1,24 @@
+{
+  "name": "quakehunter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server/index.js",
+    "con": "concurrently \"yarn dev\" \"cd client && yarn start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-datasource": "^0.6.4",
+    "apollo-datasource-rest": "^0.6.11",
+    "apollo-server": "^2.9.16",
+    "graphql": "^14.5.8",
+    "jsonwebtoken": "^8.5.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.2"
+  }
+}

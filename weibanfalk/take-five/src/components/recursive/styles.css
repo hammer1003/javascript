@@ -1,0 +1,15 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.parent {
+    background: green;
+    padding: 20px;
+}
+
+.parent .child {
+    display: block;
+    background: yellow !important;
+    padding: 20px;
+}

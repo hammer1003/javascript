@@ -1,0 +1,48 @@
+mutation {
+  signUp(
+    email: "lamsungfai@me.com"
+    username: "hammer"
+    name: "Lam Sung Fai"
+    password: "Wv1@0820"
+  ) {
+    email
+    username
+    name
+    updatedAt
+    createdAt
+  }
+}
+
+mutation {
+  signIn(email: "lamsungfai@me.com", password: "Wv1@0820") {
+    email
+    username
+    name
+    updatedAt
+    createdAt
+  }
+}
+
+mutation {
+  signOut
+}
+
+{
+  me {
+    id
+    name
+    email
+  }
+}
+
+{
+  users {
+    id
+  }
+}
+
+{
+  user(id: "5e0aff6239ee9645eb074093") {
+    id
+  }
+}

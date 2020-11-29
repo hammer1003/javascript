@@ -1,0 +1,287 @@
+mutation {
+  user(email: "hammer@me.com") {
+    message
+    isSuccess
+    userInfo {
+      username
+      email
+      position
+    }
+  }
+}
+
+{
+  users {
+    id
+    username
+    email
+  }
+}
+
+mutation {
+  factory(email: "inquiry@tokyohappy.com") {
+    message
+    isSuccess
+    factoryInfo {
+      factoryname
+      email
+      search {
+        ranking
+      }
+      evaluate {
+        inquiry {
+          cost
+          quantity
+          leadTime
+        }
+        service {
+          cooperation
+          speed
+          potential
+          afterService
+          complement
+        }
+        realiability {
+          reputation
+          scale
+          auditReport
+          location
+        }
+        quality {
+          printing
+          packing
+          skills
+          quality
+          clear
+        }
+      }
+    }
+  }
+}
+
+{
+  factories {
+    id
+    factoryname
+    email
+    search {
+      ranking
+      location
+      cost {
+        max
+        min
+      }
+      quantity {
+        max
+        min
+      }
+      leadTime {
+        max
+        min
+      }
+      items
+    }
+    evaluate {
+      inquiry {
+        cost
+        quantity
+        leadTime
+      }
+      service {
+        cooperation
+        speed
+        potential
+        afterService
+        complement
+      }
+      realiability {
+        reputation
+        scale
+        auditReport
+        location
+      }
+      quality {
+        printing
+        packing
+        skills
+        quality
+        clear
+      }
+    }
+  }
+}
+
+mutation {
+  registration(
+    username: "hammer"
+    position: "IT"
+    email: "hammer@me.com"
+    password: "vv120820"
+  ) {
+    id
+    email
+    name
+    message
+    isSuccess
+  }
+}
+
+mutation {
+  login(email: "hammer@me.com", password: "vv120820") {
+    id
+    email
+    name
+    message
+    isSuccess
+  }
+}
+{ "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMjEzZmM4Y2EzMWVjYjZhNTc0YWJjZiIsImVtYWlsIjoiaGFtbWVyQG1lLmNvbSIsImlhdCI6MTU5NjAxNTQyMiwiZXhwIjoxNTk2MDE5MDIyfQ.zbsDRmIhVkzeXHsU-FxnAKdeOpWRW8_7FFqaf3WJL9I"}
+
+
+mutation {
+  createFactory(
+    factoryname: "HK Night"
+    email: "inquiry@hknight.com"
+    ranking: "7"
+    search: {
+      location: "Hong Kong"
+      cost: { max: 50, min: 20 }
+      quantity: { max: 1000, min: 100 }
+      leadTime: { max: 7, min: 1 }
+      items: ["bag", "doll", "box"]
+    }
+    evaluate: {
+      inquiry: { cost: 4, quantity: 5, leadTime: 5 }
+      service: {
+        cooperation: 4
+        speed: 3
+        potential: 5
+        afterService: 4
+        complement: 3
+      }
+      realiability: { reputation: 3, scale: 4, auditReport: 5, location: 4 }
+      quality: { printing: 3, packing: 4, skills: 3, quality: 2, clear: 3 }
+    }
+  ) {
+    id
+    email
+    name
+    message
+    isSuccess
+  }
+}
+
+mutation {
+  updateFactory(
+    factoryname: "Tokyo Happy"
+    email: "inquiry@tokyohappy.com"
+    search: {
+      location: "Tokyo China"
+      cost: { max: 50, min: 20 }
+      quantity: { max: 1000, min: 100 }
+      leadTime: { max: 7, min: 1 }
+      items: ["bag", "doll", "eye"]
+    }
+  ) {
+    message
+    isSuccess
+  }
+}
+
+mutation {
+  updateAnalysis(
+    email: "inquiry@tokyohappy.com"
+    evaluate: {
+      inquiry: { cost: 2, quantity: 2, leadTime: 2 }
+      service: {
+        cooperation: 4
+        speed: 3
+        potential: 5
+        afterService: 4
+        complement: 3
+      }
+      realiability: { reputation: 3, scale: 4, auditReport: 5, location: 4 }
+      quality: { printing: 3, packing: 4, skills: 3, quality: 2, clear: 3 }
+    }
+  ) {
+    message
+    isSuccess
+  }
+}
+
+{
+  userToken(
+    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlNDI1MTU4YzliMzY2MzkzMTAyNzAwMyIsImVtYWlsIjoibGFtc3VuZ2ZhaUBtZS5jb20iLCJpYXQiOjE1ODE0MDQ1MDQsImV4cCI6MTU4MTYyMDUwNH0.2q8IoWAdchhlKMTMojMrUoBko7hesVTmLkyqNx3CpzM"
+  ) {
+    id
+    username
+    email
+    position
+  }
+}
+
+mutation {
+  updateUser(
+    username: "hammerABC"
+    email: "hammer@me.com"
+    position: "CTO"
+    password: "Wv1@0820"
+  ) {
+    message
+    isSuccess
+  }
+}
+
+mutation {
+  resetPassword(
+    email: "lamsungfai@me.com"
+    oldPassword: "Wv1@0820"
+    newPassword: "As1!2@3#"
+  ) {
+    message
+    isSuccess
+  }
+}
+
+mutation {
+  findProduct(
+    cost: "30-40"
+    quantity: "101-1000"
+    leadTime: "2-3"
+    product: "bag"
+  ) {
+    factoryname
+    search {
+      location
+      contactPerson
+      contactTel
+    }
+    evaluate {
+      inquiry {
+        cost
+        quantity
+        leadTime
+      }
+      service {
+        cooperation
+        speed
+        potential
+        afterService
+        complement
+      }
+      realiability {
+        reputation
+        scale
+        auditReport
+        location
+      }
+      quality {
+        printing
+        packing
+        skills
+        quality
+        clear
+      }
+    }
+  }
+}
